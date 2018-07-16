@@ -41,8 +41,6 @@ public class Fish : MonoBehaviour
 		Vector3 force = new Vector3(Random.Range(-30, 30), Random.Range(-30, 30), 0);
 		Debug.Log(force);
 		_rb2d.AddForce(force);
-		if(_rb2d.velocity.x < 0) _sr.flipX = true;
-		else _sr.flipX = false;
 	}
 
 	Vector3 getRandomPosition()
@@ -70,6 +68,7 @@ public class Fish : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
+		if(_rb2d.velocity.x < 0) _sr.flipX = true;
+		else _sr.flipX = false;
 	}
 }
